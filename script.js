@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle "Yes" button click
     btnYes.addEventListener('click', () => {
         message.classList.remove('hidden');
+        btnNo.style.display = 'none'; // Hide "No" button entirely when "Yes" is clicked
         btnYes.style.transform = 'scale(0.95)';
         setTimeout(() => {
             btnYes.style.transform = '';
