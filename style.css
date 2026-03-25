@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Deep black background for the neon theme */
+    background-color: #050505;
+    background-image: radial-gradient(circle at center, #111 0%, #000 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+.container {
+    text-align: center;
+    padding: 4rem 6rem;
+    position: relative;
+    z-index: 10;
+}
+
+.question {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 3.5rem;
+    color: #fff;
+    /* Sharper Neon Blue Glow for Heading */
+    text-shadow:
+        0 0 2px #fff,
+        0 0 4px #fff,
+        0 0 8px #0ff,
+        0 0 16px #0ff,
+        0 0 32px #0ff;
+    letter-spacing: 2px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 3.5rem;
+    position: relative;
+}
+
+.btn {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 1rem 3.5rem;
+    border: 2px solid;
+    /* Changed from 50px pill shape to slightly rounded rectangular */
+    border-radius: 8px;
+    cursor: pointer;
+    background: transparent;
+    transition: all 0.3s ease;
+    outline: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn-yes {
+    color: #0f0;
+    border-color: #0f0;
+    /* Sharper Neon Green Glow */
+    box-shadow:
+        0 0 4px #0f0,
+        inset 0 0 4px #0f0;
+    text-shadow: 0 0 3px #0f0;
+}
+
+.btn-yes:hover {
+    background: #0f0;
+    color: #000;
+    box-shadow:
+        0 0 8px #0f0,
+        0 0 16px #0f0,
+        inset 0 0 4px #0f0;
+    text-shadow: none;
+    transform: scale(1.05) translateY(-2px);
+}
+
+.btn-no {
+    color: #ff0055;
+    border-color: #ff0055;
+    /* Sharper Neon Pink Glow */
+    box-shadow:
+        0 0 4px #ff0055,
+        inset 0 0 4px #ff0055;
+    text-shadow: 0 0 3px #ff0055;
+
+    /* Slightly slower, smoother CSS transition for evasion */
+    transition: top 0.6s cubic-bezier(0.25, 0.8, 0.25, 1),
+        left 0.6s cubic-bezier(0.25, 0.8, 0.25, 1),
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+/* Add a visual cue to the button if it were magically hovered */
+.btn-no:hover {
+    background: #ff0055;
+    color: #000;
+    box-shadow:
+        0 0 8px #ff0055,
+        0 0 16px #ff0055,
+        inset 0 0 4px #ff0055;
+    text-shadow: none;
+}
+
+.message-container {
+    height: 60px;
+    margin-top: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.message {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #fff;
+    /* Sharper Neon Green Glow matching the Yes button */
+    text-shadow:
+        0 0 2px #fff,
+        0 0 4px #fff,
+        0 0 8px #39ff14,
+        0 0 16px #39ff14,
+        0 0 32px #39ff14;
+    opacity: 1;
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translateY(0) scale(1);
+}
+
+.message.hidden {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.8);
+    pointer-events: none;
+}
